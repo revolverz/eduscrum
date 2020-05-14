@@ -7,17 +7,18 @@ class TestFactory {
         this.date = '2020-01-09 13:14:58';
     }
 }
-
 class TestFactoryMethod {
 	create( type ) {
-		if ( type === 'testOne' )
-			return new TestFactory( 108000, 300, 'Оплата за услуги по счёту' );
-		if (type === 'testTwo')
-			return new TestFactory( 111000, 320, 'Списание средств' );
+		if ( type === 'testOne' ) {
+            return new TestFactory( 108000, 300, 'Оплата за услуги по счёту' );
+        }
+		if (type === 'testTwo') {
+            return new TestFactory( 111000, 320, 'Списание средств' );
+        }
 	}
 }
 
-const factory = new TestFactoryMethod();
+let factory = new TestFactoryMethod();
 
-const testTypeOne = factory.create('testOne');
-const testTypeTwo = factory.create('testTwo');
+let testTypeOne = factory.create('testOne');
+let testTypeTwo = factory.create('testTwo');
