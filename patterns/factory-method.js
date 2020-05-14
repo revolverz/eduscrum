@@ -9,12 +9,12 @@ class TestFactory {
 }
 
 class TestFactoryMethod {
-	create( type ) {
-		if ( type === 'testOne' )
-			return new TestFactory( 108000, 300, 'Оплата за услуги по счёту' );
-		if (type === 'testTwo')
-			return new TestFactory( 111000, 320, 'Списание средств' );
-	}
+    create( type ) {
+        if ( type === 'testOne' )
+            return new TestFactory( 108000, 300, 'Оплата за услуги по счёту' );
+	if (type === 'testTwo')
+	    return new TestFactory( 111000, 320, 'Списание средств' );
+    }
 }
 
 const factory = new TestFactoryMethod();
