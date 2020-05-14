@@ -1,3 +1,4 @@
+// сама фабрика
 class TestFactory {
 
     constructor( amount, balance, comment ) {
@@ -8,6 +9,7 @@ class TestFactory {
     }
 }
 
+// метод, создающий классы в зависимости от входных данных
 class TestFactoryMethod {
     create( type ) {
         if ( type === 'testOne' )
