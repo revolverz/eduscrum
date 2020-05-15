@@ -28,8 +28,6 @@ myCountTwo.increaseCount();
 console.log( myCountOne.getCount() );
 console.log( myCountTwo.getCount() );
 
-
-
 let User;
 ( function() {
     let instance;
@@ -45,8 +43,7 @@ let User;
     };
 }());
 
-
-var mySingleton = (function () {
+let mySingleton = (function () {
 
     // Instance stores a reference to the Singleton
     let instance;
