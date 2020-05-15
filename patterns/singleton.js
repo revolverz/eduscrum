@@ -25,6 +25,3 @@ myCountOne.increaseCount();
 myCountOne.increaseCount();
 myCountTwo.increaseCount();
 myCountTwo.increaseCount();
-
-console.log( myCountOne.getCount() );
-console.log( myCountTwo.getCount() );
