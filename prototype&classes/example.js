@@ -25,7 +25,7 @@ Task.getDefaultTitle = function() {
 
 Task.count = 0;
 
-function Subtask(title,parent) {
+function SubTask(title,parent) {
     Task.call(this,title);
     this._parent = parent;
 }
