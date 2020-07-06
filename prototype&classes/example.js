@@ -68,6 +68,7 @@ class SubTask extends Task {
     constructor(title,parent) {
         super(title);
         this._parent = parent;
+        this.bar = '5';
     }
 }
 
