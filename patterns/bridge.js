@@ -28,6 +28,7 @@ class SilbrigColor extends Color {
     }
 }
 
+// создаем два подкласса, наследуемся от корневого класса Model
 class Audi extends Model {
     constructor(color) {
 	super(color);
