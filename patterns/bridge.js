@@ -1,65 +1,46 @@
-// input devices
-
-var Gestures = function (output) {
-    this.output = output;
-
-    this.tap = function () { this.output.click(); }
-    this.swipe = function () { this.output.move(); }
-    this.pan = function () { this.output.drag(); }
-    this.pinch = function () { this.output.zoom(); }
+class Model {
+	constructor(color) {
+		this.color = color;
+	}
 };
 
-var Mouse = function (output) {
-    this.output = output;
-
-    this.click = function () { this.output.click(); }
-    this.move = function () { this.output.move(); }
-    this.down = function () { this.output.drag(); }
-    this.wheel = function () { this.output.zoom(); }
+class Color {
+	constructor(type) {
+		this.type = type;
+	}
+	get() {
+		return this.type;
+	}
 };
 
-// output devices
-
-var Screen = function () {
-    this.click = function () { log.add("Screen select"); }
-    this.move = function () { log.add("Screen move"); }
-    this.drag = function () { log.add("Screen drag"); }
-    this.zoom = function () { log.add("Screen zoom in"); }
-};
-
-var Audio = function () {
-    this.click = function () { log.add("Sound oink"); }
-    this.move = function () { log.add("Sound waves"); }
-    this.drag = function () { log.add("Sound screetch"); }
-    this.zoom = function () { log.add("Sound volume up"); }
-};
-
-// logging helper
-
-var log = (function () {
-    var log = "";
-
-    return {
-        add: function (msg) { log += msg + "\n"; },
-        show: function () { alert(log); log = ""; }
-    }
-})();
-
-function run() {
-
-    var screen = new Screen();
-    var audio = new Audio();
-
-    var hand = new Gestures(screen);
-    var mouse = new Mouse(audio);
-
-    hand.tap();
-    hand.swipe();
-    hand.pinch();
-
-    mouse.click();
-    mouse.move();
-    mouse.wheel();
-
-    log.show();
+class BlackColor extends Color {
+	constructor() {
+		super("dark-black");
+	}
 }
+
+class SilbrigColor extends Color {
+	constructor() {
+		super("Silbermetallic");
+	}
+}
+
+class Audi extends Model {
+	constructor(color) {
+		super(color);
+	}
+
+	paint() {
+		return `Auto: Audi, Color: ${this.color.get()}`;
+	}
+};
+
+class Bmw extends Model {
+	constructor(color) {
+		super(color);
+	}
+
+	paint() {
+		return `Auto: Bmw, Color: ${this.color.get()}`;
+	}
+};
